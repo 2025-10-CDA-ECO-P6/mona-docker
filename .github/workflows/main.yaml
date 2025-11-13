@@ -28,9 +28,8 @@ jobs:
       run: docker build -t my-app-image .
 
   deploy:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
-    
     steps:
     - name: Trigger Render.com deployment
       run: curl "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
