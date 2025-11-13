@@ -25,4 +25,4 @@ jobs:
       run: SQLITE_DB_LOCATION=./test-db.sqlite yarn test
 
     - name: Build Docker image
-      run: docker build -t my-app-image ./docker/app
+      run: docker build -t my-app-image .
