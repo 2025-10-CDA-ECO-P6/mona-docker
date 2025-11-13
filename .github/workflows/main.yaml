@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs: 
-  test : 
+  test: 
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       run: yarn install
 
     - name: Run tests
-      run: yarn test
+      run: SQLITE_DB_LOCATION=./test-db.sqlite yarn test
 
     - name: Build Docker image
       run: docker build -t my-app-image ./docker/app
